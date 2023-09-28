@@ -9,7 +9,7 @@ class Config(object):
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or '1lLe24QdQ46H9/rbYch7bFo/qlLiI1V1ass26iNIPD5awVh+T8f2jkL/3yWEjO7aFZ4Ir4w24qrY+AStbI/hyQ=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'cms-server-1.database.windows.net'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'cms-server-2.database.windows.net'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'cms_db'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'jerry-admin'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Kktt1@345'
