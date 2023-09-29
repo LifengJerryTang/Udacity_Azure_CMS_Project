@@ -66,12 +66,11 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
             app.logger.error('Invalid input username or password. Please check!')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
-        app.logger.info('User are login successfuly.')
         next_page = request.args.get('next')
+        app.logger.info('User logged in successfuly!!!')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
         return redirect(next_page)
@@ -96,6 +95,7 @@ def authorized():
         user = User.query.filter_by(username="admin").first()
         login_user(user)
         _save_cache(cache)
+    app.logger.info('User logged in successfuly using Microsoft account!!!')
     return redirect(url_for('home'))
 
 @app.route('/logout')
